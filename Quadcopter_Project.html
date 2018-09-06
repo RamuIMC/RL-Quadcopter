@@ -12418,7 +12418,15 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Reflections">Reflections<a class="anchor-link" href="#Reflections">&#182;</a></h2><p><strong>Question 1</strong>: Describe the task that you specified in <code>task.py</code>.  How did you design the reward function?</p>
-<p><strong>Answer</strong>: Currently, iam not sure how to design reward function for this task. Hence, i used the same reward function which is mentioned in example task. Could you please help me with this?</p>
+<p><strong>Answer</strong>: 
+I have chosen takeoff task to train the agent . 
+For reward function, I have used the signed difference between sim.pose &amp; target.pose</p>
+<p>Reward Function:</p>
+
+<pre><code>reward = 1.-.3*(abs(self.sim.pose[:3] - self.target_pos)).sum()
+
+</code></pre>
+<p>I am exploring various other reward functions to improve the results for this task. Could you please help on this?</p>
 
 </div>
 </div>
@@ -12494,7 +12502,11 @@ Dense(units=300) + ReLu Activation
 </ul>
 <p><strong>Answer</strong>:</p>
 <ul>
-<li>The hardest part was getting started with the concepts with continuous control task and undestanding the concepts of Policy Gradient</li>
+<li><p>The hardest part was getting started with the concepts of continuous control task, Policy Gradient.
+  I am exploring various other reward functions to improve the results</p>
+</li>
+<li><p>The very interesting thing i found was that the learning rates for actor and critic along with other hyper parameters and the reward function plays a key role in agent behaviour</p>
+</li>
 </ul>
 
 </div>
