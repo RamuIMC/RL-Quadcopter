@@ -12418,7 +12418,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Reflections">Reflections<a class="anchor-link" href="#Reflections">&#182;</a></h2><p><strong>Question 1</strong>: Describe the task that you specified in <code>task.py</code>.  How did you design the reward function?</p>
-<p><strong>Answer</strong>:</p>
+<p><strong>Answer</strong>: Currently, iam not sure how to design reward function for this task. Hence, i used the same reward function which is mentioned in example task. Could you please help me with this?</p>
 
 </div>
 </div>
@@ -12433,7 +12433,32 @@ div#notebook {
 <li>What was your final choice of hyperparameters (such as $\alpha$, $\gamma$, $\epsilon$, etc.)?</li>
 <li>What neural network architecture did you use (if any)? Specify layers, sizes, activation functions, etc.</li>
 </ul>
-<p><strong>Answer</strong>:</p>
+<p><strong>Answer</strong>: I have used Deep Deterministic Policy Gradients (DDPG) as it is one of the well known Reinforcement algorithm for continuous action space</p>
+<p>The final choice of the hyperparameters are :</p>
+<p>batch_size = 64
+Capacity of experience replay memory = 100000
+Tau = 0.001
+Learning rate for the actor = 0.0001
+Learning rate for the critic = 0.001
+Gamma = 0.99</p>
+<p>Actor :</p>
+<p>Dense(units=500) + BatchNorm + L2 Regularisation + ReLu Activation
+Dense(units=300) + BatchNorm + L2 Regularisation + ReLu Activation
+Dense( units=action_size) + Sigmoid Activation</p>
+<p>Crtic :</p>
+
+<pre><code>#hidden layer(s) for state pathway
+
+Dense(units=300) + BatchNorm + L2 Regularisation + ReLu Activation
+Dense(units=300) + ReLu Activation
+
+Action Pathway :
+
+Dense(units=300) + L2 Regularisation + ReLu Activation
+Dense(units=300) + ReLu Activation
+
+</code></pre>
+<p>Combine state and Action pathway with ReLu Activation</p>
 
 </div>
 </div>
@@ -12449,6 +12474,11 @@ div#notebook {
 <li>How good was the final performance of the agent? (e.g. mean rewards over the last 10 episodes)</li>
 </ul>
 <p><strong>Answer</strong>:</p>
+<ul>
+<li>I feel it is a difficult task for the beginners to understand the concepts. But when i came to know the concepts, i think it is very interesting</li>
+<li>Unfortunately, i could not get the better results</li>
+<li>Could you please give me suggestions based on the plots</li>
+</ul>
 
 </div>
 </div>
@@ -12463,6 +12493,9 @@ div#notebook {
 <li>Did you find anything interesting in how the quadcopter or your agent behaved?</li>
 </ul>
 <p><strong>Answer</strong>:</p>
+<ul>
+<li>The hardest part was getting started with the concepts with continuous control task and undestanding the concepts of Policy Gradient</li>
+</ul>
 
 </div>
 </div>
