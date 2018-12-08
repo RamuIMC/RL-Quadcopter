@@ -13451,8 +13451,8 @@ Learning rate for the actor = 0.0001
 Learning rate for the critic = 0.001
 Gamma = 0.99</p>
 <p>Actor :</p>
-<p>Dense(units=500) + BatchNorm + L2 Regularisation + ReLu Activation
-Dense(units=300) + BatchNorm + L2 Regularisation + ReLu Activation
+<p>Dense(units=200) + BatchNorm + L2 Regularisation + ReLu Activation
+Dense(units=200) + BatchNorm + L2 Regularisation + ReLu Activation
 Dense( units=action_size) + Sigmoid Activation</p>
 <p>Crtic :</p>
 
@@ -13486,8 +13486,33 @@ Dense(units=300) + ReLu Activation
 <ul>
 <li>I feel it is a difficult task for the beginners to understand the concepts. But when i came to know the concepts, i think it is very interesting</li>
 <li>Unfortunately, i could not get the better results</li>
-<li>Could you please give me suggestions based on the plots</li>
+<li>currently, the agent has has not learned much with the below Algorithm parameters and model.</li>
 </ul>
+<p>batch_size = 64
+Capacity of experience replay memory = 100000
+Tau = 0.001
+Learning rate for the actor = 0.0001
+Learning rate for the critic = 0.001
+Gamma = 0.99</p>
+<p>Actor :</p>
+<p>Dense(units=200) + BatchNorm + L2 Regularisation + ReLu Activation
+Dense(units=200) + BatchNorm + L2 Regularisation + ReLu Activation
+Dense( units=action_size) + Sigmoid Activation</p>
+<p>Crtic :</p>
+
+<pre><code>#hidden layer(s) for state pathway
+
+Dense(units=300) + BatchNorm + L2 Regularisation + ReLu Activation
+Dense(units=300) + ReLu Activation
+
+Action Pathway :
+
+Dense(units=300) + L2 Regularisation + ReLu Activation
+Dense(units=300) + ReLu Activation
+
+</code></pre>
+<p>Combine state and Action pathway with ReLu Activation</p>
+<p>But it is observed that the agent is learning slowly over the time with the various parameters and actor/critic metwork models</p>
 
 </div>
 </div>
